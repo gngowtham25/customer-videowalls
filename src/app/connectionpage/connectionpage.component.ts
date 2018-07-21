@@ -76,7 +76,7 @@ export class ConnectionpageComponent implements OnInit {
         'Content-Type': 'application/json',
       })
     };
-    this.httpClient.post('http://104.155.137.69:9000/api/v1/room/ifRequestedRoomAlreadyThereForThisDevice',{'deviceId' : result1} , httpOptions)
+    this.httpClient.post('https://104.155.137.69:9000/api/v1/room/ifRequestedRoomAlreadyThereForThisDevice',{'deviceId' : result1} , httpOptions)
      .subscribe((data: any) => {
        // console.log(data);
        this.id4 = JSON.parse(data.data).id;
@@ -89,14 +89,14 @@ export class ConnectionpageComponent implements OnInit {
          // console.log("Success");
          this.subscription = Observable.interval(this.timer1*1000/4)
            .subscribe(() => {
-             this.httpClient.post('http://104.155.137.69:9000/api/v1/room/isSalesmanAllotted', {'id':id1}, httpOptions)
+             this.httpClient.post('https://104.155.137.69:9000/api/v1/room/isSalesmanAllotted', {'id':id1}, httpOptions)
                .subscribe((data: any) => {
                  // let id = JSON.parse(data.data).id;
                  // if(id != undefined){
                  //   this.unsubscribeMe();
                  // }
                  if(data.response == 108203){
-                     window.open('http://35.184.34.22:3000/'+id1,"_top");
+                     window.open('https://35.184.34.22:3000/'+id1,"_top");
                  }
 
                  // console.log(data);
@@ -137,7 +137,7 @@ export class ConnectionpageComponent implements OnInit {
     }
     else{
       // this.disconnectDropDown = true;
-      this.httpClient.post('http://104.155.137.69:9000/api/v1/consumer/createConsumer', {
+      this.httpClient.post('https://104.155.137.69:9000/api/v1/consumer/createConsumer', {
         "name": name,
         "phoneNumber": number,
         "deviceId" : result1,
@@ -160,7 +160,7 @@ export class ConnectionpageComponent implements OnInit {
     }
   connectAgain(){
     this.feedbackButton = false;
-      this.httpClient.post('http://104.155.137.69:9000/api/v1/room/createRoom', {
+      this.httpClient.post('https://104.155.137.69:9000/api/v1/room/createRoom', {
         "deviceId" : result1,
         "consumerId" : this.customerData
       })
@@ -177,7 +177,7 @@ export class ConnectionpageComponent implements OnInit {
           };
           this.subscription = Observable.interval(this.timer1*1000/4)
             .subscribe(() => {
-              this.httpClient.post('http://104.155.137.69:9000/api/v1/room/isSalesmanAllotted', {'id':id1}, httpOptions)
+              this.httpClient.post('https://104.155.137.69:9000/api/v1/room/isSalesmanAllotted', {'id':id1}, httpOptions)
                 .subscribe((data: any) => {
                   // let id = JSON.parse(data.data).id;
                   // if(id != undefined){
@@ -185,7 +185,7 @@ export class ConnectionpageComponent implements OnInit {
                   // }
                   if(data.response == 108203){
                     this.skipConnectClicked = true;
-                      window.open('http://35.184.34.22:3000/'+id1,"_top");
+                      window.open('https://35.184.34.22:3000/'+id1,"_top");
                   }
 
                   // console.log(data);
@@ -212,7 +212,7 @@ export class ConnectionpageComponent implements OnInit {
         'Content-Type': 'application/json',
       })
     };
-    this.httpClient.post('http://104.155.137.69:9000/api/v1/room/deleteRoom', {'id':id1}, httpOptions)
+    this.httpClient.post('https://104.155.137.69:9000/api/v1/room/deleteRoom', {'id':id1}, httpOptions)
       .subscribe((data: any) => {
         // console.log(data);
       })
@@ -229,7 +229,7 @@ export class ConnectionpageComponent implements OnInit {
         'Content-Type': 'application/json',
       })
     };
-    this.httpClient.post('http://104.155.137.69:9000/api/v1/room/deleteRoom', {'id':this.id4}, httpOptions)
+    this.httpClient.post('https://104.155.137.69:9000/api/v1/room/deleteRoom', {'id':this.id4}, httpOptions)
       .subscribe((data: any) => {
         // console.log(data);
       })
