@@ -1,0 +1,36 @@
+<html lang="en">
+ <head>
+   Required meta tags
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>Video Walls</title>
+ </head>
+ <body>
+   <div *ngIf="alertDropDown">
+     <div class="alert alert-success">
+       <strong><pre>Please disconnect previous call</pre></strong>
+       <button (click)="removeRoom()" class="remove">Disconnect</button>
+      </div>
+   </div>
+     <div class="wrap">
+             <div class="search">
+               <form [formGroup]='stateForm'>
+                   <input type="text" class="form-control" id='search' placeholder="Search for product" formControlName='search' size="20" (keyup)="onKey($event)" (click)='openDropDown()' autocomplete="off">
+                   <!-- <img src="http://ilifehacking.cz/wp-content/uploads/2016/12/lupa_318-50440.jpg" class="searchButton"> -->
+                   <img src="../../assets/images/searchButton.png" class="searchButton"/>
+                   <i class="fa fa-search"></i>
+               </form>
+           </div>
+     </div>
+
+   <div clickOutside (clickOutside)="closeDropDown()">
+     <div *ngIf='showDropDown' class='search-drop-down'>
+       <div class="list-group">
+         <a class="list-group-item list-group-item-action"  (click)="selectValue(s)" *ngFor="let s of states | searchFilter: getSearchValue()">{{s}}</a>
+       </div>
+     </div>
+   </div>
+<img src="../../assets/images/VW-19.png" class="myImageSet">
+
+ </body>
+</html>
