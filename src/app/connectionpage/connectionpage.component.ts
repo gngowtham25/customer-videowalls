@@ -96,7 +96,7 @@ export class ConnectionpageComponent implements OnInit {
                  //   this.unsubscribeMe();
                  // }
                  if(data.response == 108203){
-                     window.open('https://35.188.1.197:3000/'+id1,"_top");
+                     window.open('http://35.188.1.197:3000/'+id1,"_top");
                  }
 
                  // console.log(data);
@@ -185,7 +185,7 @@ export class ConnectionpageComponent implements OnInit {
                   // }
                   if(data.response == 108203){
                     this.skipConnectClicked = true;
-                      window.open('https://35.188.1.197:3000/'+id1,"_top");
+                      window.open('http://35.188.1.197:3000/'+id1,"_top");
                   }
 
                   // console.log(data);
