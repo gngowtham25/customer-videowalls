@@ -79,7 +79,7 @@ export class HomeComponent implements OnInit {
 				 'Content-Type': 'application/json',
 			 })
 		 };
-		 this.httpClient.post('https://104.155.137.69:9000/api/v1/room/ifRequestedRoomAlreadyThereForThisDevice',{'deviceId' : result1} , httpOptions)
+		 this.httpClient.post('http://104.155.137.69:9000/api/v1/room/ifRequestedRoomAlreadyThereForThisDevice',{'deviceId' : result1} , httpOptions)
 		 	.subscribe((data: any) => {
 				console.log(data);
 				this.id4 = JSON.parse(data.data).id;
@@ -88,7 +88,7 @@ export class HomeComponent implements OnInit {
 		 			this.alertDropDown = true;
 					this.subscription = Observable.interval(3000)
             .subscribe(() => {
-              this.httpClient.post('https://104.155.137.69:9000/api/v1/room/isSalesmanAllotted', {'id':this.id4}, httpOptions)
+              this.httpClient.post('http://104.155.137.69:9000/api/v1/room/isSalesmanAllotted', {'id':this.id4}, httpOptions)
                 .subscribe((data: any) => {
                   if(data.response == 108203){
 										this.unsubscribeMe();
@@ -161,7 +161,7 @@ export class HomeComponent implements OnInit {
 						})
 					};
 					if (this.values.length >= 1) {
-						this.httpClient.get('https://104.155.137.69:9000/api/v1/product/searchProduct?query='+this.values,httpOptions)
+						this.httpClient.get('http://104.155.137.69:9000/api/v1/product/searchProduct?query='+this.values,httpOptions)
 						 	.subscribe((data: any) => {
 			          console.log(data);
 						 		this.states = [];
@@ -192,7 +192,7 @@ export class HomeComponent implements OnInit {
     				message : 'No cusomters as of now'
   			};
 				connectToSalesman(name,number){
-					this.httpClient.post('https://104.155.137.69:9000/api/v1/consumer/createConsumer', {
+					this.httpClient.post('http://104.155.137.69:9000/api/v1/consumer/createConsumer', {
 						"name": name,
 						"phoneNumber": number,
 						"deviceId" : result1
@@ -214,7 +214,7 @@ export class HomeComponent implements OnInit {
 							this.subscription = Observable.interval(3000)
 
 								.subscribe(() => {
-                  this.httpClient.post('https://104.155.137.69:9000/api/v1/room/isSalesmanAllotted', {'id':id}, httpOptions)
+                  this.httpClient.post('http://104.155.137.69:9000/api/v1/room/isSalesmanAllotted', {'id':id}, httpOptions)
                     .subscribe((data: any) => {
                       let id = JSON.parse(data.data).id;
                       if(id != undefined){
@@ -252,7 +252,7 @@ export class HomeComponent implements OnInit {
 				}
 
 				connectAgain(){
-					this.httpClient.post('https://104.155.137.69:9000/api/v1/room/createRoom', {
+					this.httpClient.post('http://104.155.137.69:9000/api/v1/room/createRoom', {
 						"deviceId" : result1
 					})
 					.subscribe((data: any) => {
@@ -274,7 +274,7 @@ export class HomeComponent implements OnInit {
 	    					};
 								this.subscription = Observable.interval(this.timer1*1000/4)
 									.subscribe(() => {
-	                  this.httpClient.post('https://104.155.137.69:9000/api/v1/room/isSalesmanAllotted', {'id':id}, httpOptions)
+	                  this.httpClient.post('http://104.155.137.69:9000/api/v1/room/isSalesmanAllotted', {'id':id}, httpOptions)
 	                    .subscribe((data: any) => {
 	                      // let id = JSON.parse(data.data).id;
 	                      // if(id != undefined){
@@ -335,7 +335,7 @@ export class HomeComponent implements OnInit {
 		        'Content-Type': 'application/json',
 		      })
 		    };
-		    this.httpClient.post('https://104.155.137.69:9000/api/v1/room/deleteRoom', {'id':this.id4}, httpOptions)
+		    this.httpClient.post('http://104.155.137.69:9000/api/v1/room/deleteRoom', {'id':this.id4}, httpOptions)
 		      .subscribe((data: any) => {
 		        console.log(data);
 		      })
