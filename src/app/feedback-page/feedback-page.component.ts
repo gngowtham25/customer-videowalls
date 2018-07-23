@@ -28,7 +28,7 @@ export class FeedbackPageComponent implements OnInit {
   }
 
   submitForm(){
-    this.httpClient.post('http://104.155.137.69:9000/api/v1/feedback/giveFeedback', {
+    this.httpClient.post(SERVER_URL+'/api/v1/feedback/giveFeedback', {
       "id" : this.customerData,
       "technicalKnowledge" : this.radio1,
       "communicationSkill" : this.radio2,
