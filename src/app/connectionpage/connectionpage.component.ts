@@ -13,7 +13,7 @@ import { ModalDirective } from 'ngx-bootstrap';
 import { Input } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Router, NavigationExtras} from "@angular/router";
-import { NODE_URL } from '../../config/config';
+import { NODE_URL, SERVER_URL } from '../../config/config';
 
 
 var result1 = "";

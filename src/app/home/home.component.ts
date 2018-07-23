@@ -11,6 +11,7 @@ import { ViewChild } from '@angular/core';
 import { ElementRef } from '@angular/core';
 import { ModalDirective } from 'ngx-bootstrap';
 import {Router, NavigationExtras} from "@angular/router";
+import { SERVER_URL } from '../../config/config';
 
 interface product {
 	id: number;
