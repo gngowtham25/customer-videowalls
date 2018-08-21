@@ -56,12 +56,18 @@
       </button>
     </div>
     <div class="modal-body">
-      <p>Name : <input type="text" placeholder="Enter name" #name /> </p>
-      <p>Number : <input type="text" placeholder="Enter number" #number /></p>
+      <form #myForm="ngForm">
+        <input type="text" style="margin:1%" class="form-control" [(ngModel)]="customerName" [ngModelOptions]="{standalone: true}" placeholder="Enter name"
+          required #name />
+        <input type="number" style="margin:1%;" class="form-control" [(ngModel)]="customerMobileNumber" [ngModelOptions]="{standalone: true}" placeholder="Enter number"
+          required #number />
+        <button type="button" style="margin:1%; float: right;" class="btn btn-primary" (click)="connectToSalesman(name.value,number.value,open1); d('Cross click');">Connect</button>
+        <!-- <button type="submit" class="btn btn-primary">Connect</button> -->
+      </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn" (click)="connectAgain()" (click)="d('Cross click')">Skip</button>
-      <button type="button" class="btn btn-danger" (click)="connectToSalesman(name.value,number.value,open1)" (click)="d('Cross click')">Connect</button>
+      <!-- <button type="button" class="btn" (click)="connectAgain()" (click)="d('Cross click')">Skip</button> -->
+
     </div>
   </ng-template>
   <div *ngIf="alertDropDown">

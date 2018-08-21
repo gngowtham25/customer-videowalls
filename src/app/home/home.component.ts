@@ -50,6 +50,10 @@ export class HomeComponent implements OnInit {
 	averageWaitingTime = "";
 	id4 = "";
 
+	showImage = true;
+
+	imageUrl = "../assets/images/guruji.png";
+
   videos: any[] = [
     // {
     //   check: true,

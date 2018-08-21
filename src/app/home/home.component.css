@@ -22,50 +22,14 @@ body{
   position: relative
 }
 
-.form-control{
-  float: left;
-  width: 100%;
-  border: 1px solid #000000;
-  padding: 5px;
-  height: 55px;
-  border-radius: 5px;
-  outline: none;
-  color: #9DBFAF;
-	font-size: 25px;
-}
 
-.form-control:focus{
-  color: #00B4CC;
-}
 
-.searchButton {
-  position: absolute;
-  right: -40px;
-  width: 40px;
-  height: 55px;
-  border: 1px solid #000000;
-  background: #000000;
-  text-align: center;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size:20px;
-}
-
-.wrap{
-  width: 50%;
-  position: absolute;
-  top: 40%;
-  left: 46%;
-  transform: translate(-50%, -50%);
-	z-index: 10;
-}
 
 .search-drop-down{
   width: 50%;
 	position: absolute;
-	left:21%;
-	top:45%;
+	left:25%;
+	top:18%;
 }
 
 .dark-modal .modal-content {
