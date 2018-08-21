@@ -14,6 +14,8 @@ import { Input } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Router, NavigationExtras} from "@angular/router";
 import { NODE_URL, SERVER_URL } from '../../config/config';
+import { NgxSpinnerService } from 'ngx-spinner';
+
 
 
 var result1 = "";
@@ -51,7 +53,7 @@ export class ConnectionpageComponent implements OnInit {
   public sellingPrice : number;
   public mrpPrice : number;
 
-  constructor(private route: ActivatedRoute,private modalService: NgbModal,private httpClient: HttpClient,private router:Router) {
+  constructor(private route: ActivatedRoute,private modalService: NgbModal,private httpClient: HttpClient,private router:Router, private spinner: NgxSpinnerService) {
     this.route.queryParams.subscribe(params => {
           this.id = params["id"];
           this.name = params["name"];
@@ -150,9 +152,7 @@ export class ConnectionpageComponent implements OnInit {
             this.customerData = JSON.parse(data.data).id;
             localStorage.setItem('customer',this.customerData);
         });
-
-             this.connectAgain();
-
+        this.connectAgain();
 
     }
   }
@@ -160,6 +160,7 @@ export class ConnectionpageComponent implements OnInit {
       this.subscription.unsubscribe();
     }
   connectAgain(){
+    this.spinner.show();
     this.feedbackButton = false;
       this.httpClient.post(SERVER_URL+'/api/v1/room/createRoom', {
         "deviceId" : result1,
@@ -184,6 +185,7 @@ export class ConnectionpageComponent implements OnInit {
                   // if(id != undefined){
                   //   this.unsubscribeMe();
                   // }
+                  this.spinner.hide();
                   if(data.response == 108203){
                     this.skipConnectClicked = true;
                       window.open(NODE_URL+id1,"_top");

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormGroup, FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -47,6 +48,7 @@ const appRoutes : Routes = [
     ReactiveFormsModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(appRoutes),
+    NgxSpinnerModule
     ],
   providers: [],
   bootstrap: [AppComponent]

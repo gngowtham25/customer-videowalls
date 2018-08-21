@@ -1,7 +1,9 @@
 <html>
+
 <head>
   <title>Video Walls</title>
 </head>
+
 <body>
   <nav class="myNav">
     <span class="myNavText">
@@ -38,79 +40,83 @@
   <div class="outer6">
     <img src="../../assets/images/VW-15.png" class="myCall">
   </div>
-     <ng-template #open1 let-c="close" let-d="dismiss" id="content1">
-        <div class="modal-header">
-          <h3>Please enter name and number</h3>
-          <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        </div>
-    </ng-template>
-    <ng-template #content1 let-c="close" let-d="dismiss" id="content1">
-       <div class="modal-header">
-           <h4 class="modal-title">Enter details</h4>
-           <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-           <span aria-hidden="true">&times;</span>
-           </button>
-       </div>
-       <div class="modal-body">
-           <p>Name :  <input type="text" placeholder="Enter name" #name /> </p>
-           <p>Number : <input type="text" placeholder="Enter number" #number /></p>
-        </div>
-       <div class="modal-footer">
-         <button type="button" class="btn" (click)="connectAgain()" (click)="d('Cross click')">Skip</button>
-         <button type="button" class="btn btn-danger" (click)="connectToSalesman(name.value,number.value,open1)" (click)="d('Cross click')">Connect</button>
-       </div>
-   </ng-template>
-   <div *ngIf="alertDropDown">
-     <div class="alert alert-success">
-       <strong><pre>Connected to salesman                                                Typically connects in {{timer1}} seconds </pre></strong>
-     </div>
-   </div>
-   <div *ngIf="requestRoomDropDown">
-     <div class="alert alert-success">
-       <strong><pre>Please disconnect previous call</pre></strong>
-       <button (click)="removeRoom1()" class="remove">Disconnect</button>
-     </div>
-   </div>
+  <ng-template #open1 let-c="close" let-d="dismiss" id="content1">
+    <div class="modal-header">
+      <h3>Please enter name and number</h3>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </ng-template>
+  <ng-template #content1 let-c="close" let-d="dismiss" id="content1">
+    <div class="modal-header">
+      <h4 class="modal-title">Enter details</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Name : <input type="text" placeholder="Enter name" #name /> </p>
+      <p>Number : <input type="text" placeholder="Enter number" #number /></p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn" (click)="connectAgain()" (click)="d('Cross click')">Skip</button>
+      <button type="button" class="btn btn-danger" (click)="connectToSalesman(name.value,number.value,open1)" (click)="d('Cross click')">Connect</button>
+    </div>
+  </ng-template>
+  <div *ngIf="alertDropDown">
+    <div class="alert alert-success">
+      <strong>
+        <pre>Connected to salesman. Typically connects in {{timer1}} seconds </pre></strong>
+    </div>
+  </div>
+  <div *ngIf="requestRoomDropDown">
+    <div class="alert alert-success">
+      <strong>
+        <pre>Please disconnect previous call</pre></strong>
+      <button (click)="removeRoom1()" class="remove">Disconnect</button>
+    </div>
+  </div>
   <div *ngIf="disconnectDropDown">
-      <button (click)="removeRoom()" class="remove1">Cancel Request</button>
+    <button (click)="removeRoom()" class="remove1">Cancel Request</button>
   </div>
   <div class="outer">
-      <div class="inner">
-        <img src="../../assets/images/VW-11.png" >
-      </div>
+    <div class="inner">
+      <img src="../../assets/images/VW-11.png">
+    </div>
   </div>
   <ng-template #content4 let-c="close" let-d="dismiss" id="content1">
-     <div class="modal-header">
-         <h4 class="modal-title">Thank You for your response</h4>
-     </div>
-     <div class="modal-body">
-         <p>Would you like to place another call to a expert salesman?</p>
-      </div>
-     <div class="modal-footer">
-       <button type="button" class="btn btn-success" (click)="connectAgain()" (click)="feebBackButton()" (click)="d('Cross click')">YES</button>
-       <button type="button" class="btn btn-danger" (click)="d('Cross click')" (click)="moveToHome()">NO</button>
-     </div>
- </ng-template>
+    <div class="modal-header">
+      <h4 class="modal-title">Thank You for your response</h4>
+    </div>
+    <div class="modal-body">
+      <p>Would you like to place another call to a expert salesman?</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" (click)="connectAgain()" (click)="feebBackButton()" (click)="d('Cross click')">YES</button>
+      <button type="button" class="btn btn-danger" (click)="d('Cross click')" (click)="moveToHome()">NO</button>
+    </div>
+  </ng-template>
   <ng-template #content3 let-c="close" let-d="dismiss" id="content3">
-     <div class="modal-header">
-         <h4 class="modal-title">Feedback</h4>
-     </div>
-     <div class="modal-body">
-         <p>Thank You for spending time with our expert</p>
-         <p>We hope your query was resolved?</p>
-      </div>
-     <div class="modal-footer">
-         <button type="button" class="btn btn-success" (click)="moveToFeedback()" (click)="d('Cross click')">YES</button>
-         <button type="button" class="btn btn-danger" (click)="openPlaceCall(content4)"  (click)="d('Cross click')">NO</button>
-     </div>
- </ng-template>
+    <div class="modal-header">
+      <h4 class="modal-title">Feedback</h4>
+    </div>
+    <div class="modal-body">
+      <p>Thank You for spending time with our expert</p>
+      <p>We hope your query was resolved?</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" (click)="moveToFeedback()" (click)="d('Cross click')">YES</button>
+      <button type="button" class="btn btn-danger" (click)="openPlaceCall(content4)" (click)="d('Cross click')">NO</button>
+    </div>
+  </ng-template>
 
   <div class="nextButton" *ngIf="feedbackButton">
     <button class="goToFeedback" (click)="goToFeedbackPage(content3)">FEEDBACK</button>
   </div>
-    <img src="../../assets/images/VW-08.png">
+  <img src="../../assets/images/VW-08.png">
+  <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="medium" color="#fff" type="ball-running-dots"></ngx-spinner>
 
 </body>
+
 </html>
