@@ -331,7 +331,8 @@ export class HomeComponent implements OnInit {
 							"details": this.pdt.details,
 							"category":this.pdt.category,
 							"sellingPrice":this.pdt.sellingPrice,
-							"mrpPrice":this.pdt.mrpPrice
+							"mrpPrice":this.pdt.mrpPrice,
+							"type": this.pdt.type
             }
         };
 				this.router.navigate(['connection'],navigationExtras);
