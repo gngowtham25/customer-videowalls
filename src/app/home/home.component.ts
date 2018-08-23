@@ -20,6 +20,7 @@ interface product {
 	category: String;
 	sellingPrice : number;
 	mrpPrice : number;
+	type : string
 }
 
 var pdt: product;
@@ -134,7 +135,8 @@ export class HomeComponent implements OnInit {
 		  					details: this.productList[i].productDetails,
 		  					category: this.productList[i].productCategory,
 								sellingPrice : this.productList[i].productSellingPrice,
-								mrpPrice : this.productList[i].productMRP
+								mrpPrice : this.productList[i].productMRP,
+								type : "customer-page",
 		  				};
 		  			}
 		  		}
